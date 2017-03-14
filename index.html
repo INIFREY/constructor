@@ -2,22 +2,113 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link href="css/creative.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="css/style.css">
-    <title></title>
+    <title>Generator | Главная</title>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <h1>Success</h1>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Меню <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" id="logo" href="javascript:void(0)">Generator HTML</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        </div>
+
     </div>
-</div>
+</nav>
+
+<header id="firstPage" class="switchPage">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading">Генератор HTML сайтов</h1>
+            <hr>
+            <p>Создание конструкций-костяков для будущих полноценных сайтов.</p>
+            <button data-show="secondPage" type="button" class="btn btn-primary btn-xl page-scroll showPage">ПРИСТУПИТЬ</button>
+        </div>
+    </div>
+</header>
+
+<header id="secondPage" class="switchPage">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>Создание проекта - Шаг 1</h1>
+            <hr>
+            <p>Для начала введите желаемое название проекта и выберите вариант создание макета.</p>
+            <div class="form-group name">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Название проекта">
+            </div>
+            <button type="button" data-show="services" class="btn btn-primary btn-xl page-scroll showPage">Создать свой проект</button>
+            <a href="#" class="btn btn-primary btn-xl page-scroll">Использовать готовый макет</a>
+        </div>
+    </div>
+</header>
+
+<section id="services" class="switchPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Выбор макета</h2>
+                <hr>
+                <p>Выберите подходящий для Вас макет будущего сайта.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <img src="img/2col.jpg" class="img-responsiv">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <img src="img/1col.jpg" class="img-responsiv">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <img src="img/2col2.jpg" class="img-responsiv">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <img src="img/3col.jpg" class="img-responsiv">
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top:50px;">
+                <button data-show="secondPage" class="btn btn-primary btn-xl page-scroll showPage">Шаг назад</button>
+                <a  class="btn btn-primary btn-xl page-scroll">Продолжить</a>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="js/creative.min.js"></script>
+
 <script src="js/main.js"></script>
 </body>
 </html>

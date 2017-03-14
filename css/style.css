@@ -1,4 +1,10 @@
+button.btn {
+  outline: none !important; }
+
 .cbalink {
   display: none !important; }
+
+.switchPage {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
