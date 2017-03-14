@@ -13,7 +13,8 @@ $( document ).ready(function() {
     });
 
     $('#logo').on('click', function(){
-        location.reload();
+        $('.switchPage').fadeOut(400);
+        $('#firstPage').fadeIn(200);
     });
 
 });
