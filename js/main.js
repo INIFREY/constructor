@@ -17,4 +17,8 @@ $( document ).ready(function() {
         $('#firstPage').fadeIn(200);
     });
 
+    $('.service-box ').click(function () {
+        $('.service-box').removeClass('active');
+        $(this).addClass('active');
+    });
 });

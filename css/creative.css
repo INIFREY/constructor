@@ -224,6 +224,17 @@ header .header-content .header-content-inner p {
 .service-box {
   max-width: 400px;
   margin: 50px auto 0;
+  border: 3px solid #fff;
+  border-radius: 5px;
+}
+.service-box img {width: 100%;border-radius: 1px;-webkit-filter: grayscale(50%); filter: grayscale(50%);}
+.active {
+  border: 3px solid #F05F40;
+  border-radius: 5px;
+}
+.active img {
+  -webkit-filter: none;
+  filter: none;
 }
 @media (min-width: 992px) {
   .service-box {
