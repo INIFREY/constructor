@@ -4,6 +4,16 @@
 
 $( document ).ready(function() {
 
+    $('.next-step').click(function () {
+        if ($('.service-box').hasClass('active')) {
+
+        } else {
+            $('#config').removeClass('switchPage');
+            $(this).removeAttr('data-show')
+            alert('Выберите один с макетов!');
+        }
+    });
+
     $('#firstPage').show();
 
     $('.showPage').on('click', function(){
@@ -21,4 +31,6 @@ $( document ).ready(function() {
         $('.service-box').removeClass('active');
         $(this).addClass('active');
     });
+
+
 });

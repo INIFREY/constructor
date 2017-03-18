@@ -26,7 +26,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Меню <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" id="logo" href="javascript:void(0)">Generator HTML</a>
+            <a class="navbar-brand page-scroll" id="logo" href="javascript:void(0);">Generator HTML</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
+                <div class="service-box ">
                     <img src="img/3.png" class="img-responsiv">
                 </div>
             </div>
@@ -96,9 +96,53 @@
             </div>
             <div class="col-md-12" style="margin-top:50px;">
                 <button data-show="secondPage" class="btn btn-primary btn-xl page-scroll showPage">Шаг назад</button>
-                <a  class="btn btn-primary btn-xl page-scroll">Продолжить!</a>
+                <a  class="btn btn-primary btn-xl next-step showPage" data-show="config">Продолжить</a>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<section id="config" class="switchPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Настройка макета</h2>
+                <hr>
+                <p>Перетащите в левый квадрат нужный Вам блок со списка справа</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-9 col-xs-12 text-center">
+                <div class="stuct-box">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-12 text-center">
+                <div class="service-block">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Header</span>
+                </div>
+                <div class="service-block">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Content</span>
+                </div>
+                <div class="service-block">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Sidebar</span>
+                </div>
+                <div class="service-block">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Footer</span>
+                </div>
+                <div class="service-block">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Text Block</span>
+                </div>
+                <div class="service-block">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Image</span>
+                </div>
+            </div>
+            <div class="col-md-12 button-block text-center">
+                <a href="#" data-show="services" class="btn btn-primary btn-xl showPage">Предыдущий шаг</a>
+                <a href="#" class="btn btn-primary btn-xl page-scroll">Следующий шаг</a>
+            </div>
         </div>
     </div>
 </section>

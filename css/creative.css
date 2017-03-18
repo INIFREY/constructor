@@ -473,5 +473,6 @@ body {
     cursor: pointer;
 }
 .service-block i {margin-right: 50px;}
-.stuct-box {width: 100%;height: 400px;background: #fff;border-radius: 10px;}
+.stuct-box {width: 100%;height: 300px;background: #fff;border-radius: 10px;}
 .button-block {margin-top: 20px;}
+#config {color: #fff!important;}
