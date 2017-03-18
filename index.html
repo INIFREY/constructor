@@ -53,10 +53,10 @@
             <hr>
             <p>Для начала введите желаемое название проекта и выберите вариант создание макета.</p>
             <div class="form-group name">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Название проекта">
+                <input type="text" class="form-control" id="projectName" placeholder="Название проекта">
             </div>
-            <button type="button" data-show="services" class="btn btn-primary btn-xl page-scroll showPage">Создать свой проект</button>
-            <a href="#" class="btn btn-primary btn-xl page-scroll">Использовать готовый макет</a>
+            <button type="button" disabled data-show="services" class="btn btn-primary btn-xl page-scroll showPage">Создать свой проект</button>
+            <button type="button" disabled class="btn btn-primary btn-xl page-scroll">Использовать готовый макет</button>
         </div>
     </div>
 </header>
@@ -75,35 +75,35 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
+                <div class="service-box" data-layout="1">
                     <img src="img/1.png" class="img-responsiv">
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
+                <div class="service-box" data-layout="2">
                     <img src="img/2.png" class="img-responsiv">
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box ">
+                <div class="service-box" data-layout="3">
                     <img src="img/3.png" class="img-responsiv">
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box">
+                <div class="service-box" data-layout="4">
                     <img src="img/4.png" class="img-responsiv">
                 </div>
             </div>
             <div class="col-md-12" style="margin-top:50px;">
                 <button data-show="secondPage" class="btn btn-primary btn-xl page-scroll showPage">Шаг назад</button>
-                <a  class="btn btn-primary btn-xl next-step showPage" data-show="config">Продолжить</a>
+                <button data-show="configPage" type="button" disabled class="btn btn-primary btn-xl page-scroll showPage" id="servicesNextBtn">Продолжить</button>
             </div>
 
         </div>
     </div>
 </section>
 
-<section id="config" class="switchPage">
+<section id="configPage" class="switchPage">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
