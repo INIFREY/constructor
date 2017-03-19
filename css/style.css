@@ -24,4 +24,47 @@ body {
   height: auto;
   z-index: -9999; }
 
+.stuct-box {
+  padding: 10px; }
+  .stuct-box > div {
+    display: none; }
+  .stuct-box > div > div {
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 100%; }
+  .stuct-box .header {
+    height: 60px;
+    background-color: red;
+    margin-bottom: 10px; }
+  .stuct-box .content {
+    height: 140px;
+    background-color: #ffac00;
+    margin-bottom: 10px; }
+  .stuct-box .footer {
+    height: 60px;
+    background-color: blue;
+    clear: both; }
+  .stuct-box #layout-2 .content, .stuct-box #layout-3 .content, .stuct-box #layout-4 .content {
+    float: left;
+    width: 75%;
+    margin-right: 20px; }
+  .stuct-box #layout-2 .sidebar, .stuct-box #layout-3 .sidebar, .stuct-box #layout-4 .sidebar {
+    float: left;
+    width: 22%;
+    height: 140px;
+    background: #66a613; }
+  .stuct-box #layout-3 .content {
+    margin-right: 0;
+    margin-left: 20px; }
+  .stuct-box #layout-4 .content {
+    float: left;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px; }
+
+#configPage .service-block {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */

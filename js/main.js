@@ -2,7 +2,12 @@
  * Created by Валерий on 05.03.2017.
  */
 
-var $settings = {};
+var $settings = {}; // Глобальные настройки
+var $servicesList = {  // Список доступных виджетов
+    header: ['logo', 'topMenu'],
+    content: ['text'],
+    footer: ['copyright']
+};
 
 $( document ).ready(function() {
 
@@ -44,5 +49,17 @@ $( document ).ready(function() {
     $('#services .service-box').on('click', function(){
         $('#servicesNextBtn').attr('disabled', false);
         $settings.layout = $(this).data('layout');
+        $('.stuct-box>div').hide();
+        $('.service-block').hide();
+        $('#layout-'+$settings.layout).show();
+    });
+
+    // Отображение доступных виджетов при клике
+    $('#configPage .stuct-box>div>div').on('click', function(){
+        $('.service-block').hide();
+        var block = $(this).attr('class');
+        $servicesList[block].forEach(function(item) {
+         $('#service-'+item).show(200);
+        });
     });
 });
