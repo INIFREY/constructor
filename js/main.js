@@ -57,7 +57,9 @@ $( document ).ready(function() {
     // Отображение доступных виджетов при клике
     $('#configPage .stuct-box>div>div').on('click', function(){
         $('.service-block').hide();
-        var block = $(this).attr('class');
+        $('#configPage .stuct-box>div>div').removeClass('active');
+        $(this).addClass('active');
+        var block = $(this).data('service');
         $servicesList[block].forEach(function(item) {
          $('#service-'+item).show(200);
         });
