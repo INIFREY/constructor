@@ -93,12 +93,25 @@ $( document ).ready(function() {
             var key = $(this).attr('name');
             settings[key] = $(this).val();
             $(this).val("");
+            // TODO: Закрывать попап, после добавления виджета
+            // TODO: Обозначить добавленные виджеты на макет и сделать их сортировку
         });
         $request[target].push({
             name: name,
             settings: settings
         });
+    });
 
-        console.log($request);
+    $('#testGen').on('click', function(){
+        $.post(
+            "/create.php",
+            {
+                settings: $settings,
+                request: $request
+            },
+            function(data){
+                window.open('http://constructor.ml/'+data, '_blank')
+            }
+        );
     });
 });
