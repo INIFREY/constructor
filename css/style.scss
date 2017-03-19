@@ -12,7 +12,7 @@ button.btn{
 }
 
 html{
-  overflow:  hidden;
+  //overflow:  hidden;
 }
 
 body {
@@ -95,4 +95,13 @@ body {
   .service-block{
     display: none;
   }
+}
+
+.widget-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
 }

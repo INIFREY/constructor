@@ -7,9 +7,6 @@ button.btn {
 .switchPage {
   display: none; }
 
-html {
-  overflow: hidden; }
-
 body {
   background: url("../img/bg.jpeg");
   background-size: cover; }
@@ -66,5 +63,13 @@ body {
 
 #configPage .service-block {
   display: none; }
+
+.widget-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto; }
 
 /*# sourceMappingURL=style.css.map */

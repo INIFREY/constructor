@@ -8,6 +8,13 @@ var $servicesList = {  // Список доступных виджетов
     content: ['text'],
     footer: ['copyright']
 };
+var $request = {  // Запрос на сервер со всемы выбранными виджетами
+    header: [],
+    content: [],
+    footer: [],
+    sidebar: [],
+    sidebar2: []
+};
 
 $( document ).ready(function() {
 
@@ -63,5 +70,35 @@ $( document ).ready(function() {
         $servicesList[block].forEach(function(item) {
          $('#service-'+item).show(200);
         });
+    });
+
+    // Открытие попапа при клике на виджет
+    $('.service-block').magnificPopup({
+        type:'inline',
+        midClick: true
+    });
+
+    // Очистка выбранных виджетов при переходе на предыдущую страницу
+    $('#configPagePrevBtn').on('click', function(){
+        $('#configPage .stuct-box>div>div').removeClass('active');
+        for (var key in $request) $request[key] = [];
+    });
+
+    // Клик на кнопку добавления виджета
+    $('.addWidget').on('click', function(){
+        var target = $('#configPage .stuct-box .active').data('service');
+        var name = $(this).parent().attr("id").replace("-popup", "");
+        var settings = {};
+        $(this).parent().find('input').each(function(){
+            var key = $(this).attr('name');
+            settings[key] = $(this).val();
+            $(this).val("");
+        });
+        $request[target].push({
+            name: name,
+            settings: settings
+        });
+
+        console.log($request);
     });
 });

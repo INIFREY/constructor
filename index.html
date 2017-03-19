@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
     <link href="css/creative.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -138,16 +139,16 @@
                         <div class="header" data-service="header"></div>
                         <div class="sidebar" data-service="sidebar"></div>
                         <div class="content" data-service="content"></div>
-                        <div class="sidebar" data-service="sidebar"></div>
+                        <div class="sidebar" data-service="sidebar2"></div>
                         <div class="footer" data-service="footer"></div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-xs-12 text-center">
-                <div class="service-block" id="service-logo">
+                <div class="service-block" id="service-logo" data-mfp-src="#logo-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Логотип</span>
                 </div>
-                <div class="service-block" id="service-topMenu">
+                <div class="service-block" id="service-topMenu" data-mfp-src="#topMenu-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Горизонтальное меню</span>
                 </div>
                 <div class="service-block" id="service-text">
@@ -158,12 +159,26 @@
                 </div>
             </div>
             <div class="col-md-12 button-block text-center">
-                <a href="#" data-show="services" class="btn btn-primary btn-xl showPage">Предыдущий шаг</a>
-                <a href="#" class="btn btn-primary btn-xl page-scroll">Следующий шаг</a>
+                <button  data-show="services" class="btn btn-primary btn-xl showPage" id="configPagePrevBtn">Предыдущий шаг</button>
+                <button  class="btn btn-primary btn-xl page-scroll">Следующий шаг</button>
             </div>
         </div>
     </div>
 </section>
+
+
+<!--  PopUp-s   -->
+
+<div id="logo-popup" class="widget-popup mfp-hide">
+    <label>Название: <input type="text" name="name"></label><br>
+    <label>Ссылка: <input type="text" name="link"></label><br>
+    <button class="addWidget">Добавить</button>
+</div>
+
+<div id="topMenu-popup" class="widget-popup mfp-hide">
+    <p>Test</p>
+    <button class="addWidget">Добавить</button>
+</div>
 
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
