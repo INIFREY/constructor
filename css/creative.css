@@ -471,12 +471,39 @@ body {
     text-align: left;
     margin-top: 10px;
     cursor: pointer;
-
-
-
 }
 .service-block i {margin-right: 50px;}
 .stuct-box {width: 100%;height: 300px;background: #fff;border-radius: 10px;}
 .button-block {margin-top: 20px;}
 .button-block:first-child {margin-right: 20px;}
 #configPage {color: #fff!important;}
+.widget-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.widget-popup h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+.widget-popup label {
+    width: 100%;
+    font-family:Roboto;
+}
+.widget-popup input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width:80%;
+    float: left;
+    margin-bottom:10px;
+    font-size: 16px;
+
+}
+.widget-popup .button-block {
+    background: #fff;
+}

@@ -24,10 +24,10 @@
     <div class="container-fluid">
 
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span> Меню <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" id="logo" href="javascript:void(0)">Generator HTML</a>
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+                <!--<span class="sr-only">Toggle navigation</span> Меню <i class="fa fa-bars"></i>-->
+            <!--</button>-->
+            <a class="navbar-brand page-scroll" id="logo" href="javascript:void(0);">Generator HTML</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -170,9 +170,18 @@
 <!--  PopUp-s   -->
 
 <div id="logo-popup" class="widget-popup mfp-hide">
-    <label>Название: <input type="text" name="name"></label><br>
-    <label>Ссылка: <input type="text" name="link"></label><br>
-    <button class="addWidget">Добавить</button>
+    <h3>Заголовок</h3>
+    <div class="form-group name">
+        <label>Название </label>
+        <input type="text" class="form-control" name="name" placeholder="Название проекта" autocomplete="off">
+    </div>
+    <div class="form-group name">
+        <label>Ссылка </label>
+        <input type="text" class="form-control" name="link" placeholder="Название проекта" autocomplete="off">
+    </div>
+    <div class="button-block text-center">
+        <button class="addWidget btn btn-primary btn-xl">Добавить</button>
+    </div>
 </div>
 
 <div id="topMenu-popup" class="widget-popup mfp-hide">
