@@ -12,7 +12,7 @@ button.btn{
 }
 
 html{
-  overflow:  hidden;
+  //overflow:  hidden;
 }
 
 body {
@@ -29,4 +29,79 @@ body {
   width: auto;
   height: auto;
   z-index: -9999;
+}
+
+.stuct-box{
+  padding: 10px;
+
+  >div{
+    display: none;
+  }
+
+  >div>div{
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .header{
+    height: 60px;
+    background-color: red;
+    margin-bottom: 10px;
+  }
+
+  .content{
+    height: 140px;
+    background-color: #ffac00;
+    margin-bottom: 10px;
+  }
+
+  .footer{
+    height: 60px;
+    background-color: blue;
+    clear: both;
+  }
+
+  #layout-2, #layout-3, #layout-4{
+    .content{
+      float: left;
+      width: 75%;
+      margin-right: 20px;
+    }
+
+    .sidebar{
+      float: left;
+      width: 22%;
+      height: 140px;
+      background: #66a613;
+    }
+  }
+
+  #layout-3 .content{
+    margin-right: 0;
+    margin-left: 20px;
+  }
+
+  #layout-4 .content{
+      float: left;
+      width: 50%;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+}
+
+#configPage{
+  .service-block{
+    display: none;
+  }
+}
+
+.widget-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
 }

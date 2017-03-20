@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
     <link href="css/creative.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -17,7 +18,7 @@
 </head>
 <body>
 <video autoplay loop muted class="bgvideo" id="bgvideo">
-    <source src="bg.mp4" type="video/mp4"> </source>
+    <source src="bg.mp4" type="video/mp4">
 </video>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -26,7 +27,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Меню <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" id="logo" href="javascript:void(0);">Generator HTML</a>
+            <a class="navbar-brand page-scroll" id="logo" href="javascript:void(0)">Generator HTML</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,7 +54,7 @@
             <hr>
             <p>Для начала введите желаемое название проекта и выберите вариант создание макета.</p>
             <div class="form-group name">
-                <input type="text" class="form-control" id="projectName" placeholder="Название проекта">
+                <input type="text" class="form-control" id="projectName" placeholder="Название проекта" autocomplete="off">
             </div>
             <button type="button" disabled data-show="services" class="btn btn-primary btn-xl page-scroll showPage">Создать свой проект</button>
             <button type="button" disabled class="btn btn-primary btn-xl page-scroll">Использовать готовый макет</button>
@@ -117,42 +118,74 @@
         <div class="row">
             <div class="col-lg-8 col-md-9 col-xs-12 text-center">
                 <div class="stuct-box">
+                    <div id="layout-1">
+                        <div class="header" data-service="header"></div>
+                        <div class="content" data-service="content"></div>
+                        <div class="footer" data-service="footer"></div>
+                    </div>
+                    <div id="layout-2">
+                        <div class="header" data-service="header"></div>
+                        <div class="content" data-service="content"></div>
+                        <div class="sidebar" data-service="sidebar"></div>
+                        <div class="footer" data-service="footer"></div>
+                    </div>
+                    <div id="layout-3">
+                        <div class="header" data-service="header"></div>
+                        <div class="sidebar" data-service="sidebar"></div>
+                        <div class="content" data-service="content"></div>
+                        <div class="footer" data-service="footer"></div>
+                    </div>
+                    <div id="layout-4">
+                        <div class="header" data-service="header"></div>
+                        <div class="sidebar" data-service="sidebar"></div>
+                        <div class="content" data-service="content"></div>
+                        <div class="sidebar" data-service="sidebar2"></div>
+                        <div class="footer" data-service="footer"></div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-xs-12 text-center">
-                <div class="service-block">
-                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Header</span>
+                <div class="service-block" id="service-logo" data-mfp-src="#logo-popup">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Логотип</span>
                 </div>
-                <div class="service-block">
-                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Content</span>
+                <div class="service-block" id="service-topMenu" data-mfp-src="#topMenu-popup">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Горизонтальное меню</span>
                 </div>
-                <div class="service-block">
-                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Sidebar</span>
+                <div class="service-block" id="service-text">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Текст</span>
                 </div>
-                <div class="service-block">
-                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Footer</span>
-                </div>
-                <div class="service-block">
-                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Text Block</span>
-                </div>
-                <div class="service-block">
-                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Image</span>
+                <div class="service-block" id="service-copyright">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Копирайт</span>
                 </div>
             </div>
             <div class="col-md-12 button-block text-center">
-                <a href="#" data-show="services" class="btn btn-primary btn-xl showPage">Предыдущий шаг</a>
-                <a href="#" class="btn btn-primary btn-xl page-scroll">Следующий шаг</a>
+                <button  data-show="services" class="btn btn-primary btn-xl showPage" id="configPagePrevBtn">Предыдущий шаг</button>
+                <button  class="btn btn-primary btn-xl page-scroll" id="testGen">Следующий шаг</button>
             </div>
         </div>
     </div>
 </section>
+
+
+<!--  PopUp-s   -->
+
+<div id="logo-popup" class="widget-popup mfp-hide">
+    <label>Название: <input type="text" name="name"></label><br>
+    <label>Ссылка: <input type="text" name="link"></label><br>
+    <button class="addWidget">Добавить</button>
+</div>
+
+<div id="topMenu-popup" class="widget-popup mfp-hide">
+    <p>Test</p>
+    <button class="addWidget">Добавить</button>
+</div>
 
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
 <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="js/creative.js"></script>

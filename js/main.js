@@ -2,7 +2,19 @@
  * Created by Валерий on 05.03.2017.
  */
 
-var $settings = {};
+var $settings = {}; // Глобальные настройки
+var $servicesList = {  // Список доступных виджетов
+    header: ['logo', 'topMenu'],
+    content: ['text'],
+    footer: ['copyright']
+};
+var $request = {  // Запрос на сервер со всемы выбранными виджетами
+    header: [],
+    content: [],
+    footer: [],
+    sidebar: [],
+    sidebar2: []
+};
 
 $( document ).ready(function() {
 
@@ -44,5 +56,62 @@ $( document ).ready(function() {
     $('#services .service-box').on('click', function(){
         $('#servicesNextBtn').attr('disabled', false);
         $settings.layout = $(this).data('layout');
+        $('.stuct-box>div').hide();
+        $('.service-block').hide();
+        $('#layout-'+$settings.layout).show();
+    });
+
+    // Отображение доступных виджетов при клике
+    $('#configPage .stuct-box>div>div').on('click', function(){
+        $('.service-block').hide();
+        $('#configPage .stuct-box>div>div').removeClass('active');
+        $(this).addClass('active');
+        var block = $(this).data('service');
+        $servicesList[block].forEach(function(item) {
+         $('#service-'+item).show(200);
+        });
+    });
+
+    // Открытие попапа при клике на виджет
+    $('.service-block').magnificPopup({
+        type:'inline',
+        midClick: true
+    });
+
+    // Очистка выбранных виджетов при переходе на предыдущую страницу
+    $('#configPagePrevBtn').on('click', function(){
+        $('#configPage .stuct-box>div>div').removeClass('active');
+        for (var key in $request) $request[key] = [];
+    });
+
+    // Клик на кнопку добавления виджета
+    $('.addWidget').on('click', function(){
+        var target = $('#configPage .stuct-box .active').data('service');
+        var name = $(this).parent().attr("id").replace("-popup", "");
+        var settings = {};
+        $(this).parent().find('input').each(function(){
+            var key = $(this).attr('name');
+            settings[key] = $(this).val();
+            $(this).val("");
+            // TODO: Закрывать попап, после добавления виджета
+            // TODO: Обозначить добавленные виджеты на макет и сделать их сортировку
+        });
+        $request[target].push({
+            name: name,
+            settings: settings
+        });
+    });
+
+    $('#testGen').on('click', function(){
+        $.post(
+            "/create.php",
+            {
+                settings: $settings,
+                request: $request
+            },
+            function(data){
+                window.open('http://constructor.ml/'+data, '_blank')
+            }
+        );
     });
 });
