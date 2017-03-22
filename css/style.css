@@ -34,7 +34,21 @@ body {
   .stuct-box .header {
     height: 60px;
     background-color: red;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 0 10px; }
+    .stuct-box .header .widEl {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      padding: 1px 5px;
+      font-weight: bold;
+      background-color: #010101;
+      border-radius: 5px;
+      margin: 17px 5px 0;
+      cursor: pointer; }
+      .stuct-box .header .widEl:hover {
+        background-color: rgba(1, 1, 1, 0.71); }
   .stuct-box .content {
     height: 140px;
     background-color: #ffac00;

@@ -123,6 +123,11 @@ $( document ).ready(function() {
             // TODO: Обозначить добавленные виджеты на макет и сделать их сортировку
         });
         if (error) return;
+        var number = $request[target].length;
+        var header =  $(this).closest(".widget-popup").find('h3').text();
+        console.log($(this).closest("h3"));
+        var fLetter = header.charAt(0);
+        $('#configPage .stuct-box .active').append("<div class='widEl ui-state-default' data-number='"+number+"' title='"+header+"'>"+fLetter+"</div>");
         $request[target].push({
             name: name,
             settings: settings
@@ -130,6 +135,8 @@ $( document ).ready(function() {
         $.magnificPopup.close();
         console.log($request);
     });
+
+    $( ".stuct-box .header" ).sortable();
 
     $('#testGen').on('click', function(){
 

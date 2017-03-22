@@ -49,6 +49,22 @@ body {
     height: 60px;
     background-color: red;
     margin-bottom: 10px;
+    text-align: left;
+    padding: 0 10px;
+    .widEl{
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      padding: 1px 5px;
+      font-weight: bold;
+      background-color: rgb(1, 1, 1);
+      border-radius: 5px;
+      margin: 17px 5px 0;
+      cursor: pointer;
+      &:hover{
+        background-color: rgba(1, 1, 1, 0.71);
+      }
+    }
   }
 
   .content{
