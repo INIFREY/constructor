@@ -476,7 +476,7 @@ body {
 .stuct-box {width: 100%;height: 300px;background: #fff;border-radius: 10px;}
 .button-block {margin-top: 20px;}
 .button-block:first-child {margin-right: 20px;}
-#configPage {color: #fff!important;}
+#configPage, #configAll, #finish {color: #fff!important;}
 .widget-popup {
     position: relative;
     background: #FFF;
@@ -507,3 +507,13 @@ body {
 .widget-popup .button-block {
     background: #fff;
 }
+.allconfig {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 10px;
+  width: 49%;
+  color: #000!important;
+  font-family: Roboto;
+}
+.btn {margin-right:10px;}

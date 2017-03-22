@@ -176,30 +176,57 @@
             </div>
         </div>
     </div>
-//
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6 text-center">
-                <div class="service-box" data-layout="1">
-                    <img src="img/1.png" class="img-responsiv">
+            <div class="col-lg-6 col-md-6 allconfig">
+
+                <div class="form-group">
+                    <label for="allfont">Шрифт</label><br>
+                    <select name="" id="allfont">
+                        <option>Roboto</option>
+                        <option>Open Sans</option>
+                        <option>San Francisco</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="color-font">Цвет текста</label>
+                    <input type="text" class="form-control" id="color-font" placeholder="#000">
+                </div>
+                    <div class="form-group col-md-6">
+                        <label for="customcss">Custom CSS</label>
+                        <textarea name="" id="customcss" cols="30" rows="9"></textarea>
+                    </div>
+                <div class="form-group col-md-6">
+                    <label for="customjs">Custom JS</label>
+                    <textarea name="" id="customjs" cols="30" rows="9"></textarea>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 text-center">
-                <div class="service-box" data-layout="2">
-                    <img src="img/2.png" class="img-responsiv">
+            <div class="col-lg-6 col-md-6 allconfig">
+                <div class="form-group">
+                    <label for="favicon">Favicon</label>
+                    <input type="text" class="form-control" id="favicon" placeholder="Ссылка на изображение">
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box" data-layout="3">
-                    <img src="img/3.png" class="img-responsiv">
+                <div class="form-group">
+                    <label for="color">Фон</label>
+                    <input type="text" class="form-control" id="color" placeholder="#000">
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="service-box" data-layout="4">
-                    <img src="img/4.png" class="img-responsiv">
+                <div class="form-group">
+                    <label for="img_bg">Изображение на фон</label>
+                    <input type="text" class="form-control" id="img_bg" placeholder="Ссылка на изображение">
                 </div>
+
+                <div class="form-group">
+                    <label for="keywords">Keywords</label>
+                    <input type="text" class="form-control" id="keywords" placeholder="#000">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" placeholder="#000">
+                </div>
+
             </div>
-            <div class="col-md-12" style="margin-top:50px;">
+            <div class="col-md-12 text-center" style="margin-top:50px;">
                 <button data-show="secondPage" class="btn btn-primary btn-xl page-scroll showPage">Шаг назад</button>
                 <button data-show="configPage" type="button" disabled class="btn btn-primary btn-xl page-scroll showPage" id="servicesNextBtn">Продолжить</button>
             </div>
@@ -208,7 +235,25 @@
     </div>
 </section>
 
+<section id="finish" class="switchPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">С настройками покончено!</h2>
+                <hr>
+                <p>Теперь можете сгенирировать готовый результат и сохранить его у себя на компьютере.</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center" style="margin-top:50px;">
+                <button data-show="result" class="btn btn-primary btn-xl page-scroll ">Генерировать</button>
+            </div>
+        </div>
+    </div>
+</section>
 <!--  PopUp-s   -->
 
 <div id="logo-popup" class="widget-popup mfp-hide">
