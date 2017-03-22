@@ -105,3 +105,48 @@ body {
   max-width: 500px;
   margin: 20px auto;
 }
+
+.mfp-3d-unfold {
+  .mfp-content {
+    perspective: 2000px;
+  }
+
+  /* start state */
+  .widget-popup {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateY(-60deg);
+  }
+
+
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .widget-popup {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .widget-popup {
+      transform: rotateY(60deg);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}

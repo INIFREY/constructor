@@ -75,7 +75,19 @@ $( document ).ready(function() {
     // Открытие попапа при клике на виджет
     $('.service-block').magnificPopup({
         type:'inline',
-        midClick: true
+        midClick: true,
+        callbacks: {
+            beforeOpen: function() {
+                this.st.mainClass = "mfp-3d-unfold";
+            },
+            afterClose: function() {
+                $('.widget-popup input').each(function () {
+                    $(this).val('');
+                });
+
+            }
+        },
+        removalDelay: 500
     });
 
     // Очистка выбранных виджетов при переходе на предыдущую страницу
@@ -86,23 +98,30 @@ $( document ).ready(function() {
 
     // Клик на кнопку добавления виджета
     $('.addWidget').on('click', function(){
+        var error = false;
         var target = $('#configPage .stuct-box .active').data('service');
-        var name = $(this).parent().attr("id").replace("-popup", "");
+        var name = $(this).closest(".widget-popup").attr("id").replace("-popup", "");
         var settings = {};
-        $(this).parent().find('input').each(function(){
+        $(this).closest(".widget-popup").find('input').each(function(){
+            if($(this).val()==""){
+                error = true;
+                $(this).addClass('hasError');
+            }
             var key = $(this).attr('name');
             settings[key] = $(this).val();
-            $(this).val("");
-            // TODO: Закрывать попап, после добавления виджета
             // TODO: Обозначить добавленные виджеты на макет и сделать их сортировку
         });
+        if (error) return;
         $request[target].push({
             name: name,
             settings: settings
         });
+        $.magnificPopup.close();
+        console.log($request);
     });
 
     $('#testGen').on('click', function(){
+
         $.post(
             "/create.php",
             {

@@ -1,0 +1,13 @@
+body {
+    width: 1170px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+header {width: 100%;}
+main {width: 100%;}
+main.right, main.left {width: 80%!important;}
+main.center {width: 60%!important;}
+aside {width: 20%;}
+footer {width: 100%;}
