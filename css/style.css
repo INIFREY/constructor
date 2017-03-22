@@ -97,4 +97,8 @@ body {
   .mfp-3d-unfold.mfp-removing.mfp-bg {
     opacity: 0; }
 
+.nicescroll-cursors {
+  margin-right: 1px;
+  border: none !important; }
+
 /*# sourceMappingURL=style.css.map */

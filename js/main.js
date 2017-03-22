@@ -18,6 +18,8 @@ var $request = {  // Запрос на сервер со всемы выбран
 
 $( document ).ready(function() {
 
+    $("html").niceScroll({styler:"fb",cursorcolor:"#000"});
+
     // Показывает первую страницу
     $('#firstPage').show();
 
@@ -79,10 +81,14 @@ $( document ).ready(function() {
         callbacks: {
             beforeOpen: function() {
                 this.st.mainClass = "mfp-3d-unfold";
+                $('.widget-popup input').each(function () {
+                    $(this).removeClass('hasError');
+                });
             },
             afterClose: function() {
                 $('.widget-popup input').each(function () {
                     $(this).val('');
+                    $("html").css('overflow', 'hidden');
                 });
 
             }
@@ -94,6 +100,11 @@ $( document ).ready(function() {
     $('#configPagePrevBtn').on('click', function(){
         $('#configPage .stuct-box>div>div').removeClass('active');
         for (var key in $request) $request[key] = [];
+    });
+
+    // Удаление класса ошибок при вводе в инпут
+    $('.widget-popup input').on('input', function(){
+        $(this).removeClass('hasError');
     });
 
     // Клик на кнопку добавления виджета
