@@ -16,6 +16,9 @@ var $request = {  // Запрос на сервер со всемы выбран
     sidebar2: []
 };
 
+var tempCount = 0; // Для временных расчетов
+
+
 $( document ).ready(function() {
 
     $("html").niceScroll({styler:"fb",cursorcolor:"#000"});
@@ -84,6 +87,11 @@ $( document ).ready(function() {
                 $('.widget-popup input').each(function () {
                     $(this).removeClass('hasError');
                 });
+                $('.widget-popup .addWidget').each(function () {
+                    $(this).attr('disabled', false);
+                });
+                $('.widget-popup .temp-element').remove();
+                tempCount = 0;
             },
             afterClose: function() {
                 $('.widget-popup input').each(function () {
@@ -119,10 +127,18 @@ $( document ).ready(function() {
                 $(this).addClass('hasError');
             }
             var key = $(this).attr('name');
-            settings[key] = $(this).val();
-            // TODO: Обозначить добавленные виджеты на макет и сделать их сортировку
+            if (key.indexOf('[]') + 1) {
+                key = key.substring(0, key.length - 2);
+                if (!Array.isArray(settings[key])) settings[key] = [];
+                settings[key].push($(this).val());
+            }
+            else{
+                settings[key] = $(this).val();
+            }
+            // TODO: Удаление виджетов добавить
         });
         if (error) return;
+        $(this).attr('disabled', true);
         var number = $request[target].length;
         var header =  $(this).closest(".widget-popup").find('h3').text();
         console.log($(this).closest("h3"));
@@ -138,13 +154,46 @@ $( document ).ready(function() {
 
     $( ".stuct-box .header" ).sortable();
 
+    // Добавление еще одного пункта в гориз. меню
+    $('#addTopMenuLink').on('click', function(){
+        tempCount++;
+        $('#topMenu-popup .button-block').before(' <div class="form-group name temp-element">' +
+            '<label>Текст '+(tempCount+1)+'</label>' +
+            ' <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">' +
+            '</div>' +
+            '<div class="form-group name temp-element">' +
+            '<label>Ссылка '+(tempCount+1)+'</label>' +
+            '<input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">' +
+            '</div>');
+
+        // TODO: Добавить удаление и перемещение пунктов
+    });
+
     $('#testGen').on('click', function(){
+        var $requestSort = {  // Запрос на сервер со всемы выбранными виджетами
+            header: [],
+            content: [],
+            footer: [],
+            sidebar: [],
+            sidebar2: []
+        };
+
+
+        var layout = $settings.layout;
+        $('#layout-'+layout+'>div').each(function(){
+            var target = $(this).data('service');
+            $(this).find('.widEl').each(function(){
+                var number = $(this).data('number');
+                $requestSort[target].push($request[target][number]);
+            });
+        });
+
 
         $.post(
             "/create.php",
             {
                 settings: $settings,
-                request: $request
+                request: $requestSort
             },
             function(data){
                 window.open('http://constructor.ml/'+data, '_blank')

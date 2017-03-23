@@ -272,8 +272,19 @@
 </div>
 
 <div id="topMenu-popup" class="widget-popup mfp-hide">
-    <p>Test</p>
-    <button class="addWidget">Добавить</button>
+    <h3>Горизонтальное меню</h3>
+    <div class="form-group name">
+        <label>Текст </label>
+        <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">
+    </div>
+    <div class="form-group name">
+        <label>Ссылка </label>
+        <input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">
+    </div>
+    <div class="button-block text-center">
+        <button class="addWidget btn btn-primary btn-xl">Добавить</button>
+        <button id="addTopMenuLink" class="btn btn-primary btn-xl">Еще один пункт</button>
+    </div>
 </div>
 
 <script src="js/jquery-1.9.1.min.js"></script>

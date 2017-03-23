@@ -118,7 +118,23 @@ function widget($name, $settings){
         case "logo":
             $title = $settings['name'];
             $link = $settings['link'];
-            $result.="<img src='$link' title='$title'/>";
+            $result.="<img class='logo' src='$link' title='$title'/>";
+            break;
+        case "topMenu":
+            $result.="<ul class='topMenu'>";
+            for($i=0; $i<count($settings['link']); $i++){
+                $l = $settings['link'][$i];
+                $t = $settings['text'][$i];
+                $result.="<li><a href='$l'>$t</a></li>";
+            }
+            $result.="</ul>";
+//
+//            ob_start();
+//            var_dump($settings);
+//            $dump = ob_get_contents();
+//            ob_end_clean();
+//
+//            $result.="<pre>$dump</pre>";
             break;
     }
     return $result;
