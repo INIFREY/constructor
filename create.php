@@ -136,6 +136,10 @@ function widget($name, $settings){
 //
 //            $result.="<pre>$dump</pre>";
             break;
+        case "text":
+            $text = $settings['text'];
+            $result.="<p class='textBlock'>$text</p>";
+            break;
     }
     return $result;
 }

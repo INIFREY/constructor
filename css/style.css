@@ -30,27 +30,13 @@ body {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    width: 100%; }
+    width: 100%;
+    padding: 0 10px; }
   .stuct-box .header {
     height: 60px;
     background-color: red;
     margin-bottom: 10px;
-    text-align: left;
-    padding: 0 10px; }
-    .stuct-box .header .widEl {
-      display: block;
-      float: left;
-      width: 25px;
-      height: 25px;
-      padding: 1px 5px;
-      font-weight: bold;
-      background-color: #010101;
-      border-radius: 5px;
-      margin: 17px 5px 0;
-      cursor: pointer;
-      color: wheat; }
-      .stuct-box .header .widEl:hover {
-        background-color: rgba(1, 1, 1, 0.71); }
+    text-align: left; }
   .stuct-box .content {
     height: 140px;
     background-color: #ffac00;
@@ -116,5 +102,27 @@ body {
 .nicescroll-cursors {
   margin-right: 1px;
   border: none !important; }
+
+.widEl {
+  display: block;
+  float: left;
+  width: 25px;
+  height: 25px;
+  padding: 1px 5px;
+  font-weight: bold;
+  background-color: #010101;
+  border-radius: 5px;
+  margin: 17px 5px 0;
+  cursor: pointer;
+  color: wheat; }
+  .widEl:hover {
+    background-color: rgba(1, 1, 1, 0.71); }
+
+.big-form-group {
+  cursor: move; }
+  .big-form-group .form-group {
+    cursor: move; }
+    .big-form-group .form-group label {
+      cursor: move; }
 
 /*# sourceMappingURL=style.css.map */

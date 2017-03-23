@@ -84,7 +84,7 @@ $( document ).ready(function() {
         callbacks: {
             beforeOpen: function() {
                 this.st.mainClass = "mfp-3d-unfold";
-                $('.widget-popup input').each(function () {
+                $('.widget-popup input, .widget-popup textarea').each(function () {
                     $(this).removeClass('hasError');
                 });
                 $('.widget-popup .addWidget').each(function () {
@@ -94,11 +94,10 @@ $( document ).ready(function() {
                 tempCount = 0;
             },
             afterClose: function() {
-                $('.widget-popup input').each(function () {
+                $('.widget-popup input, .widget-popup textarea').each(function () {
                     $(this).val('');
-                    $("html").css('overflow', 'hidden');
                 });
-
+                $("html").css('overflow', 'hidden');
             }
         },
         removalDelay: 500
@@ -121,7 +120,7 @@ $( document ).ready(function() {
         var target = $('#configPage .stuct-box .active').data('service');
         var name = $(this).closest(".widget-popup").attr("id").replace("-popup", "");
         var settings = {};
-        $(this).closest(".widget-popup").find('input').each(function(){
+        $(this).closest(".widget-popup").find('input, textarea').each(function(){
             if($(this).val()==""){
                 error = true;
                 $(this).addClass('hasError');
@@ -152,19 +151,33 @@ $( document ).ready(function() {
         console.log($request);
     });
 
-    $( ".stuct-box .header" ).sortable();
+    // Удаление при клике ПКМ
+    $('.stuct-box').delegate('.widEl', 'mousedown', function(event) {
+        if (event.which === 3) {
+            event.preventDefault();
+            $(this).remove();
+        }
+    });
+
+    $( ".stuct-box >div>div" ).sortable();
+    $( "#topMenu-popup" ).sortable({
+        items: ".big-form-group"
+    });
+    $(".stuct-box").on("contextmenu", false);
+
 
     // Добавление еще одного пункта в гориз. меню
     $('#addTopMenuLink').on('click', function(){
         tempCount++;
-        $('#topMenu-popup .button-block').before(' <div class="form-group name temp-element">' +
+        $('#topMenu-popup .button-block').before('<div class="big-form-group temp-element"> ' +
+            '<div class="form-group name">' +
             '<label>Текст '+(tempCount+1)+'</label>' +
             ' <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">' +
             '</div>' +
-            '<div class="form-group name temp-element">' +
+            '<div class="form-group name">' +
             '<label>Ссылка '+(tempCount+1)+'</label>' +
             '<input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">' +
-            '</div>');
+            '</div> </div>');
 
         // TODO: Добавить удаление и перемещение пунктов
     });

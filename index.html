@@ -151,7 +151,7 @@
                 <div class="service-block" id="service-topMenu" data-mfp-src="#topMenu-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Горизонтальное меню</span>
                 </div>
-                <div class="service-block" id="service-text">
+                <div class="service-block" id="service-text"  data-mfp-src="#text-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Текст</span>
                 </div>
                 <div class="service-block" id="service-copyright">
@@ -273,17 +273,30 @@
 
 <div id="topMenu-popup" class="widget-popup mfp-hide">
     <h3>Горизонтальное меню</h3>
-    <div class="form-group name">
-        <label>Текст </label>
-        <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">
-    </div>
-    <div class="form-group name">
-        <label>Ссылка </label>
-        <input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">
+    <div class="big-form-group">
+        <div class="form-group name">
+            <label>Текст </label>
+            <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">
+        </div>
+        <div class="form-group name">
+            <label>Ссылка </label>
+            <input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">
+        </div>
     </div>
     <div class="button-block text-center">
         <button class="addWidget btn btn-primary btn-xl">Добавить</button>
         <button id="addTopMenuLink" class="btn btn-primary btn-xl">Еще один пункт</button>
+    </div>
+</div>
+
+<div id="text-popup" class="widget-popup mfp-hide">
+    <h3>Текстовый блок</h3>
+    <div class="form-group name">
+        <label>Текст </label>
+        <textarea class="form-control" name="text" placeholder="Введите текст"></textarea>
+    </div>
+    <div class="button-block text-center">
+        <button class="addWidget btn btn-primary btn-xl">Добавить</button>
     </div>
 </div>
 
