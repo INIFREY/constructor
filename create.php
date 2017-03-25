@@ -18,7 +18,11 @@ $sidebar2 = $_POST['request']['sidebar2'];
 
 $html.="<!DOCTYPE html><html><head><meta charset='UTF-8'>";
 $html.="<title>$projectName</title>";
-$html.="<link href='../style.css' rel='stylesheet'>";
+$html.="<link rel='stylesheet' href='../../css/jquery-ui.min.css'>";
+$html.="<link rel='stylesheet' href='../style.css'>";
+$html.="<script src='../../js/jquery-1.9.1.min.js'></script>";
+$html.="<script src='../../js/jquery-ui.min.js'></script>";
+$html.="<script src='../main.js'></script>";
 $html.="</head><body>";
 
 if ($layoutType==1){
@@ -143,6 +147,17 @@ function widget($name, $settings){
         case "copyright":
             $text = $settings['text'];
             $result.="<p class='copyright'>&copy; $text</p>";
+            break;
+        case "calendar":
+            $result.="<div class='calendar'></div>";
+            break;
+        case "h1":
+            $text = $settings['text'];
+            $result.="<h1>$text</h1>";
+            break;
+        case "h2":
+            $text = $settings['text'];
+            $result.="<h2>$text</h2>";
             break;
     }
     return $result;
