@@ -21,12 +21,10 @@ header h1 {
 .cbalink{
     display: none !important;
 }
-
 .logo{
     max-height: 70px;
     cursor: pointer;
     max-width: 300px;
     margin: 5px 10px;
 }
-
 aside .advBlock img {width: 100%;}
