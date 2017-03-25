@@ -159,6 +159,12 @@ function widget($name, $settings){
             $text = $settings['text'];
             $result.="<h2>$text</h2>";
             break;
+        case "advBlock":
+            $title = $settings['name'];
+            $link = $settings['link'];
+            $img = $settings['img'];
+            $result.="<a class='advBlock' href='$link' target='_blank'><img src='$img' title='$title'></a>";
+            break;
     }
     return $result;
 }

@@ -166,6 +166,9 @@
                 <div class="service-block" id="service-h2" data-mfp-src="#h2-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Заголовок 2 уровня</span>
                 </div>
+                <div class="service-block" id="service-advBlock" data-mfp-src="#advBlock-popup">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Рекламный блок</span>
+                </div>
             </div>
             <div class="col-md-12 button-block text-center">
                 <button  data-show="services" class="btn btn-primary btn-xl showPage" id="configPagePrevBtn">Предыдущий шаг</button>
@@ -344,6 +347,25 @@
     <div class="form-group name">
         <label>Текст </label>
         <input type="text" class="form-control" name="text" placeholder="Введите текст" autocomplete="off">
+    </div>
+    <div class="button-block text-center">
+        <button class="addWidget btn btn-primary btn-xl">Добавить</button>
+    </div>
+</div>
+
+<div id="advBlock-popup" class="widget-popup mfp-hide">
+    <h3>Рекламный блок</h3>
+    <div class="form-group name">
+        <label>Название </label>
+        <input type="text" class="form-control" name="name" placeholder="Всплывающая подсказка" autocomplete="off">
+    </div>
+    <div class="form-group name">
+        <label>Изображение </label>
+        <input type="text" class="form-control" name="img" placeholder="Ссылка на картинку" autocomplete="off">
+    </div>
+    <div class="form-group name">
+        <label>Ссылка </label>
+        <input type="text" class="form-control" name="link" placeholder="Ссылка на рекламируемый ресурс (http://...)" autocomplete="off">
     </div>
     <div class="button-block text-center">
         <button class="addWidget btn btn-primary btn-xl">Добавить</button>
