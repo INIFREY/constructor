@@ -525,11 +525,12 @@ body {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 20px;
+  position: relative;
 }
 .big-form-group i {
   position: absolute;
-  right: 30px;
-  top: 76px;
+  right: 10px;
+  top: 5px;
   color: #F05F40;
   cursor: pointer;
   padding:10px;

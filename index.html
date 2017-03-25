@@ -169,6 +169,9 @@
                 <div class="service-block" id="service-advBlock" data-mfp-src="#advBlock-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Рекламный блок</span>
                 </div>
+                <div class="service-block" id="service-sideMenu" data-mfp-src="#sideMenu-popup">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Боковое меню</span>
+                </div>
             </div>
             <div class="col-md-12 button-block text-center">
                 <button  data-show="services" class="btn btn-primary btn-xl showPage" id="configPagePrevBtn">Предыдущий шаг</button>
@@ -286,7 +289,7 @@
 <div id="topMenu-popup" class="widget-popup mfp-hide">
     <h3>Горизонтальное меню</h3>
     <div class="big-form-group">
-        <i class="fa fa-times" aria-hidden="true"></i>
+        <i class="fa fa-times deleteBigGroup" aria-hidden="true" title="Удалить"></i>
         <div class="form-group name">
             <label>Текст </label>
             <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">
@@ -299,7 +302,7 @@
     </div>
     <div class="button-block text-center">
         <button class="addWidget btn btn-primary btn-xl">Добавить</button>
-        <button id="addTopMenuLink" class="btn btn-primary btn-xl">Еще один пункт</button>
+        <button class="btn btn-primary btn-xl addBigGroup">Еще один пункт</button>
     </div>
 </div>
 
@@ -371,6 +374,26 @@
     </div>
     <div class="button-block text-center">
         <button class="addWidget btn btn-primary btn-xl">Добавить</button>
+    </div>
+</div>
+
+<div id="sideMenu-popup" class="widget-popup mfp-hide">
+    <h3>Боковое меню</h3>
+    <div class="big-form-group">
+        <i class="fa fa-times deleteBigGroup" aria-hidden="true" title="Удалить"></i>
+        <div class="form-group name">
+            <label>Текст </label>
+            <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">
+
+        </div>
+        <div class="form-group name">
+            <label>Ссылка </label>
+            <input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">
+        </div>
+    </div>
+    <div class="button-block text-center">
+        <button class="addWidget btn btn-primary btn-xl">Добавить</button>
+        <button class="btn btn-primary btn-xl addBigGroup">Еще один пункт</button>
     </div>
 </div>
 

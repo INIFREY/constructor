@@ -6,8 +6,8 @@ var $settings = {}; // Глобальные настройки
 var $servicesList = {  // Список доступных виджетов
     header: ['logo', 'topMenu', 'h1'],
     content: ['text', 'h1', 'h2', 'advBlock'],
-    sidebar: ['text', 'calendar', 'advBlock'],
-    sidebar2: ['text', 'calendar', 'advBlock'],
+    sidebar: ['text', 'calendar', 'advBlock', 'sideMenu'],
+    sidebar2: ['text', 'calendar', 'advBlock', 'sideMenu'],
     footer: ['copyright']
 };
 var $request = {  // Запрос на сервер со всемы выбранными виджетами
@@ -17,8 +17,6 @@ var $request = {  // Запрос на сервер со всемы выбран
     sidebar: [],
     sidebar2: []
 };
-
-var tempCount = 0; // Для временных расчетов
 
 
 $( document ).ready(function() {
@@ -112,7 +110,7 @@ $( document ).ready(function() {
     });
 
     // Удаление класса ошибок при вводе в инпут
-    $('.widget-popup input').on('input', function(){
+    $('.widget-popup').delegate('input, textarea', 'input', function() {
         $(this).removeClass('hasError');
     });
 
@@ -167,20 +165,20 @@ $( document ).ready(function() {
     $(".stuct-box").on("contextmenu", false);
 
 
-    // Добавление еще одного пункта в гориз. меню
-    $('#addTopMenuLink').on('click', function(){
-        tempCount++;
-        $('#topMenu-popup .button-block').before('<div class="big-form-group temp-element"> ' +
-            '<div class="form-group name">' +
-            '<label>Текст '+(tempCount+1)+'</label>' +
-            ' <input type="text" class="form-control" name="text[]" placeholder="Подпись пункта меню" autocomplete="off">' +
-            '</div>' +
-            '<div class="form-group name">' +
-            '<label>Ссылка '+(tempCount+1)+'</label>' +
-            '<input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">' +
-            '</div> </div>');
+    // Добавление еще одного пункта в попап
+    $('.addBigGroup').on('click', function(){
+        $(this).closest(".widget-popup")
+            .find(".big-form-group:first")
+            .clone().addClass('temp-element')
+            .insertBefore($(this).parent())
+            .find("input, textarea").val("")
+            .removeClass('hasError');
+    });
 
-        // TODO: Добавить удаление  пунктов
+    // Удаление пунктов в попапе
+    $('.widget-popup').delegate('.deleteBigGroup', 'click', function() {
+        if ($(this).closest(".widget-popup").find('.big-form-group').length==1) return false;
+        else $(this).parent().remove();
     });
 
     $('#testGen').on('click', function(){
