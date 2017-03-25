@@ -28,3 +28,15 @@ header h1 {
     margin: 5px 10px;
 }
 aside .advBlock img {width: 100%;}
+.topMenu li {
+    display: inline-block;
+    padding:10px;
+}
+.topMenu li, .sideMenu li {
+    color: #000;
+    border:none;
+}
+.topMenu li:hover , .sideMenu li:hover {
+    border-bottom: 1px solid #000;
+}
+.topMenu, .sideMenu {list-style: none;}
