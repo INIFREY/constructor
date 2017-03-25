@@ -14,7 +14,10 @@ main.right, main.left {width: 80%!important;}
 main.center {width: 60%!important;}
 aside {width: 20%;}
 footer {width: 100%;}
-
+header h1 {
+    width: auto;
+    display: inline-block;
+}
 .cbalink{
     display: none !important;
 }
@@ -26,3 +29,4 @@ footer {width: 100%;}
     margin: 5px 10px;
 }
 
+aside .advBlock img {width: 100%;}
