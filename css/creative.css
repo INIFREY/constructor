@@ -517,3 +517,22 @@ body {
   font-family: Roboto;
 }
 .btn {margin-right:10px;}
+.big-form-group {
+  cursor: move;
+  height: 171px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.big-form-group i {
+  position: absolute;
+  right: 30px;
+  top: 76px;
+  color: #F05F40;
+  cursor: pointer;
+  padding:10px;
+}
+.big-form-group i:hover {
+  color: red;
+}
