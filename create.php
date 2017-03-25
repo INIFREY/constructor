@@ -108,8 +108,9 @@ elseif ($layoutType==4){
 
 
 $html.="</body></html>";
-$fileName="created/html/".rand(1000000, 9999999).".html";
-//  TODO: Тут заделать проверку, существует ли файл с таким именем
+$randName = rand(1000000, 9999999);
+while (file_exists("created/html/$randName.html")) $randName = rand(10000000, 99999999);
+$fileName="created/html/$randName.html";
 $file = fopen($fileName, "w");
 fwrite($file, $html);
 fclose($file);
@@ -164,6 +165,15 @@ function widget($name, $settings){
             $link = $settings['link'];
             $img = $settings['img'];
             $result.="<a class='advBlock' href='$link' target='_blank'><img src='$img' title='$title'></a>";
+            break;
+        case "sideMenu":
+            $result.="<ul class='sideMenu'>";
+            for($i=0; $i<count($settings['link']); $i++){
+                $l = $settings['link'][$i];
+                $t = $settings['text'][$i];
+                $result.="<li><a href='$l'>$t</a></li>";
+            }
+            $result.="</ul>";
             break;
     }
     return $result;
