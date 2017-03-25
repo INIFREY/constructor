@@ -140,6 +140,10 @@ function widget($name, $settings){
             $text = $settings['text'];
             $result.="<p class='textBlock'>$text</p>";
             break;
+        case "copyright":
+            $text = $settings['text'];
+            $result.="<p class='copyright'>&copy; $text</p>";
+            break;
     }
     return $result;
 }

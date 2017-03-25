@@ -6,6 +6,8 @@ var $settings = {}; // Глобальные настройки
 var $servicesList = {  // Список доступных виджетов
     header: ['logo', 'topMenu'],
     content: ['text'],
+    sidebar: ['text'],
+    sidebar2: ['text'],
     footer: ['copyright']
 };
 var $request = {  // Запрос на сервер со всемы выбранными виджетами
@@ -134,7 +136,6 @@ $( document ).ready(function() {
             else{
                 settings[key] = $(this).val();
             }
-            // TODO: Удаление виджетов добавить
         });
         if (error) return;
         $(this).attr('disabled', true);
@@ -179,7 +180,7 @@ $( document ).ready(function() {
             '<input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">' +
             '</div> </div>');
 
-        // TODO: Добавить удаление и перемещение пунктов
+        // TODO: Добавить удаление  пунктов
     });
 
     $('#testGen').on('click', function(){

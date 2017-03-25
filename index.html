@@ -154,7 +154,7 @@
                 <div class="service-block" id="service-text"  data-mfp-src="#text-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Текст</span>
                 </div>
-                <div class="service-block" id="service-copyright">
+                <div class="service-block" id="service-copyright" data-mfp-src="#copyright-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Копирайт</span>
                 </div>
             </div>
@@ -294,6 +294,17 @@
     <div class="form-group name">
         <label>Текст </label>
         <textarea class="form-control" name="text" placeholder="Введите текст"></textarea>
+    </div>
+    <div class="button-block text-center">
+        <button class="addWidget btn btn-primary btn-xl">Добавить</button>
+    </div>
+</div>
+
+<div id="copyright-popup" class="widget-popup mfp-hide">
+    <h3>Копирайт</h3>
+    <div class="form-group name">
+        <label>Текст </label>
+        <input type="text" class="form-control" name="text" placeholder="Введите текст копирайта" autocomplete="off">
     </div>
     <div class="button-block text-center">
         <button class="addWidget btn btn-primary btn-xl">Добавить</button>
