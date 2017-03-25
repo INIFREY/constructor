@@ -175,6 +175,14 @@ function widget($name, $settings){
             }
             $result.="</ul>";
             break;
+        case "list":
+            $result.="<ul class='list'>";
+            for($i=0; $i<count($settings['text']); $i++){
+                $t = $settings['text'][$i];
+                $result.="<li>$t</li>";
+            }
+            $result.="</ul>";
+            break;
     }
     return $result;
 }

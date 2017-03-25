@@ -520,7 +520,7 @@ body {
 .btn {margin-right:10px;}
 .big-form-group {
   cursor: move;
-  height: 171px;
+  //height: 171px;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px;

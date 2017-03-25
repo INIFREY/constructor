@@ -41,7 +41,7 @@
         <div class="header-content-inner">
             <h1 id="homeHeading">Генератор HTML сайтов</h1>
             <hr>
-            <p>Создание конструкций-костяков для будущих полноценных сайтов.</p>
+            <p>С помощью данного сервиса вы можете создать простой сайт без каких-либо знаний программирования.</p>
             <button data-show="secondPage" type="button" class="btn btn-primary btn-xl page-scroll showPage">ПРИСТУПИТЬ</button>
         </div>
     </div>
@@ -52,12 +52,12 @@
         <div class="header-content-inner">
             <h1>Создание проекта - Шаг 1</h1>
             <hr>
-            <p>Для начала введите желаемое название проекта и выберите вариант создание макета.</p>
+            <p>Для начала введите желаемое название проекта.</p>
             <div class="form-group name">
                 <input type="text" class="form-control" id="projectName" placeholder="Название проекта" autocomplete="off">
             </div>
-            <button type="button" disabled data-show="services" class="btn btn-primary btn-xl page-scroll showPage">Создать свой проект</button>
-            <button type="button" disabled class="btn btn-primary btn-xl page-scroll">Использовать готовый макет</button>
+            <button type="button" disabled data-show="services" class="btn btn-primary btn-xl page-scroll showPage">Создать проект</button>
+            <!--<button type="button" disabled class="btn btn-primary btn-xl page-scroll">Использовать готовый макет</button>-->
         </div>
     </div>
 </header>
@@ -110,7 +110,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Настройка макета</h2>
                 <hr>
-                <p>Перетащите в левый квадрат нужный Вам блок со списка справа</p>
+                <p>Сначала выберете блок на макете. Потом добавьте нужные Вам элементы из списка справа. Добавленные элементы можно перемещать в пределах блока. Для удаления нужно нажать по элементу правой кнопкой мыши.</p>
             </div>
         </div>
     </div>
@@ -171,6 +171,9 @@
                 </div>
                 <div class="service-block" id="service-sideMenu" data-mfp-src="#sideMenu-popup">
                     <i class="fa fa-arrows" aria-hidden="true"></i><span>Боковое меню</span>
+                </div>
+                <div class="service-block" id="service-list" data-mfp-src="#list-popup">
+                    <i class="fa fa-arrows" aria-hidden="true"></i><span>Список</span>
                 </div>
             </div>
             <div class="col-md-12 button-block text-center">
@@ -288,7 +291,7 @@
 
 <div id="topMenu-popup" class="widget-popup mfp-hide">
     <h3>Горизонтальное меню</h3>
-    <div class="big-form-group">
+    <div class="big-form-group clearfix">
         <i class="fa fa-times deleteBigGroup" aria-hidden="true" title="Удалить"></i>
         <div class="form-group name">
             <label>Текст </label>
@@ -379,7 +382,7 @@
 
 <div id="sideMenu-popup" class="widget-popup mfp-hide">
     <h3>Боковое меню</h3>
-    <div class="big-form-group">
+    <div class="big-form-group clearfix">
         <i class="fa fa-times deleteBigGroup" aria-hidden="true" title="Удалить"></i>
         <div class="form-group name">
             <label>Текст </label>
@@ -389,6 +392,22 @@
         <div class="form-group name">
             <label>Ссылка </label>
             <input type="text" class="form-control" name="link[]" placeholder="Ссылка" autocomplete="off">
+        </div>
+    </div>
+    <div class="button-block text-center">
+        <button class="addWidget btn btn-primary btn-xl">Добавить</button>
+        <button class="btn btn-primary btn-xl addBigGroup">Еще один пункт</button>
+    </div>
+</div>
+
+<div id="list-popup" class="widget-popup mfp-hide">
+    <h3>Список</h3>
+    <div class="big-form-group clearfix">
+        <i class="fa fa-times deleteBigGroup" aria-hidden="true" title="Удалить"></i>
+        <div class="form-group name">
+            <label>Текст </label>
+            <input type="text" class="form-control" name="text[]" placeholder="Текст пункта" autocomplete="off">
+
         </div>
     </div>
     <div class="button-block text-center">

@@ -5,10 +5,10 @@
 var $settings = {}; // Глобальные настройки
 var $servicesList = {  // Список доступных виджетов
     header: ['logo', 'topMenu', 'h1'],
-    content: ['text', 'h1', 'h2', 'advBlock'],
+    content: ['text', 'h1', 'h2', 'advBlock', 'list'],
     sidebar: ['text', 'calendar', 'advBlock', 'sideMenu'],
     sidebar2: ['text', 'calendar', 'advBlock', 'sideMenu'],
-    footer: ['copyright']
+    footer: ['copyright', 'text']
 };
 var $request = {  // Запрос на сервер со всемы выбранными виджетами
     header: [],
