@@ -181,7 +181,20 @@ $( document ).ready(function() {
         else $(this).parent().remove();
     });
 
-    $('#testGen').on('click', function(){
+    // Сохраняет имя проекта в глобальный конфиг
+    $('#toFinish').on('click', function(){
+        $settings.font = $('#allfont').val();
+        if ($('#color-font').val()!="")$settings.color =  $('#color-font').val();
+        if ($('#customcss').val()!="") $settings.customcss =  $('#customcss').val();
+        if ($('#customjs').val()!="") $settings.customjs =  $('#customjs').val();
+        if ($('#favicon').val()!="") $settings.favicon =  $('#favicon').val();
+        if ($('#color').val()!="") $settings.bgcolor =  $('#color').val();
+        if ($('#img_bg').val()!="") $settings.bgimg =  $('#img_bg').val();
+        if ($('#keywords').val()!="") $settings.keywords =  $('#keywords').val();
+        if ($('#description').val()!="") $settings.description =  $('#description').val();
+    });
+
+    $('#gen').on('click', function(){
         var $requestSort = {  // Запрос на сервер со всемы выбранными виджетами
             header: [],
             content: [],

@@ -14,6 +14,15 @@ $main = $_POST['request']['content'];
 $footer = $_POST['request']['footer'];
 $sidebar = $_POST['request']['sidebar'];
 $sidebar2 = $_POST['request']['sidebar2'];
+$font = $_POST['settings']['font'];
+if (isset( $_POST['settings']['color'])) $color = $_POST['settings']['color'];
+if (isset( $_POST['settings']['customcss'])) $customcss = $_POST['settings']['customcss'];
+if (isset( $_POST['settings']['customjs'])) $customjs = $_POST['settings']['customjs'];
+if (isset( $_POST['settings']['favicon'])) $favicon = $_POST['settings']['favicon'];
+if (isset( $_POST['settings']['bgcolor'])) $bgcolor = $_POST['settings']['bgcolor'];
+if (isset( $_POST['settings']['bgimg'])) $bgimg = $_POST['settings']['bgimg'];
+if (isset( $_POST['settings']['keywords'])) $keywords = $_POST['settings']['keywords'];
+if (isset( $_POST['settings']['description'])) $description = $_POST['settings']['description'];
 
 
 $html.="<!DOCTYPE html><html><head><meta charset='UTF-8'>";
@@ -23,6 +32,17 @@ $html.="<link rel='stylesheet' href='../style.css'>";
 $html.="<script src='../../js/jquery-1.9.1.min.js'></script>";
 $html.="<script src='../../js/jquery-ui.min.js'></script>";
 $html.="<script src='../main.js'></script>";
+if (isset($favicon)) $html.="<link href='$favicon' rel='shortcut icon' type='image/x-icon' />";
+if (isset($keywords)) $html.="<meta name='Keywords' content='$keywords'> ";
+if (isset($description)) $html.="<meta name='description' content='$description'> ";
+$html.="<style> html{";
+if (isset($color)) $html.="color: $color ;";
+if (isset($font)) $html.="font-family: $font ;";
+if (isset($bgcolor)) $html.="background-color: $bgcolor ;";
+if (isset($bgimg)) $html.="background-image: url('$bgimg');}";
+$html.="}";
+if (isset($customcss)) $html.="$customcss";
+$html.="</style>";
 $html.="</head><body>";
 
 if ($layoutType==1){
@@ -106,7 +126,7 @@ elseif ($layoutType==4){
     return ['status'=>'error', 'text'=>"Не выбран шаблон!"];
 }
 
-
+if (isset($customjs)) $html.="<script> $customcjs </script>";
 $html.="</body></html>";
 $randName = rand(1000000, 9999999);
 while (file_exists("created/html/$randName.html")) $randName = rand(10000000, 99999999);

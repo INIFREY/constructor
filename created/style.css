@@ -40,3 +40,9 @@ aside .advBlock img {width: 100%;}
     border-bottom: 1px solid #000;
 }
 .topMenu, .sideMenu {list-style: none;}
+
+ul, li {display: inline-block;}
+
+img.logo {display: inline-block;
+    float: left;
+}

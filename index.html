@@ -178,7 +178,7 @@
             </div>
             <div class="col-md-12 button-block text-center">
                 <button  data-show="services" class="btn btn-primary btn-xl showPage" id="configPagePrevBtn">Предыдущий шаг</button>
-                <button  class="btn btn-primary btn-xl page-scroll" id="testGen">Следующий шаг</button>
+                <button  data-show="configAll"  class="btn btn-primary btn-xl page-scroll showPage" >Следующий шаг</button>
             </div>
         </div>
     </div>
@@ -190,7 +190,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Основные настройки сайта</h2>
                 <hr>
-                <p>Основные настройки сайта и добавление тегов и кодов.</p>
+                <p>Основные настройки сайта, добавление тегов и кодов.</p>
             </div>
         </div>
     </div>
@@ -202,9 +202,9 @@
                 <div class="form-group">
                     <label for="allfont">Шрифт</label><br>
                     <select name="" id="allfont">
-                        <option>Roboto</option>
-                        <option>Open Sans</option>
-                        <option>San Francisco</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -235,18 +235,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="keywords">Keywords</label>
-                    <input type="text" class="form-control" id="keywords" placeholder="#000">
+                    <label for="keywords">Ключевые слова(Keywords), через запятую</label>
+                    <input type="text" class="form-control" id="keywords">
                 </div>
                 <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description" placeholder="#000">
+                    <label for="description">Описание сайта</label>
+                    <input type="text" class="form-control" id="description">
                 </div>
 
             </div>
             <div class="col-md-12 text-center" style="margin-top:50px;">
-                <button data-show="secondPage" class="btn btn-primary btn-xl page-scroll showPage">Шаг назад</button>
-                <button data-show="configPage" type="button" disabled class="btn btn-primary btn-xl page-scroll showPage" id="servicesNextBtn">Продолжить</button>
+                <button data-show="configPage" class="btn btn-primary btn-xl page-scroll showPage">Шаг назад</button>
+                <button data-show="finish" type="button" class="btn btn-primary btn-xl page-scroll showPage" id="toFinish">Продолжить</button>
             </div>
 
         </div>
@@ -267,7 +267,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center" style="margin-top:50px;">
-                <button data-show="result" class="btn btn-primary btn-xl page-scroll ">Генерировать</button>
+                <button data-show="configAll" class="btn btn-primary btn-xl page-scroll showPage">Шаг назад</button>
+                <button data-show="result" class="btn btn-primary btn-xl page-scroll" id="gen">Генерировать</button>
             </div>
         </div>
     </div>
